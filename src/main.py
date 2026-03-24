@@ -1,13 +1,11 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, UploadFile, File
+from pydantic import BaseModel
+
+class Prediction(BaseModel):
+	image: UploadFile = File(...)
 
 app = FastAPI()
 
-
 @app.post("/prediction")
-def read_root():
-    return {"Hello": "World"}
-
-
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: str | None = None):
-    return {"item_id": item_id, "q": q}
+def post_prediction(prediction: Prediction):
+    return {"Hello": Prediction.image.filename}
