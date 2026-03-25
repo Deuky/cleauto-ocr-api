@@ -1,0 +1,6 @@
+*
+!src
+!src/**
+!Makefile
+!requirements.txt
+__pycache__

@@ -1,0 +1,10 @@
+*
+!src
+!src/**
+!.gitignore
+!.dockerignore
+!Dockerfile
+!Makefile
+!.github
+!.github/**
+__pycache__
