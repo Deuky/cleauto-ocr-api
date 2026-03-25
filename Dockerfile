@@ -1,4 +1,4 @@
-FROM python AS base
+FROM python:3.14 AS base
 WORKDIR /app
 COPY --from=ghcr.io/deuky/cleauto-ocr/artifact:v1 /artifact ./models/v1
 RUN apt-get update && apt-get install -y libgl-dev
