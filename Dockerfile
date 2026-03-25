@@ -17,3 +17,4 @@ COPY --from=build /app /artifact
 FROM base AS unit
 COPY --from=artifact /artifact .
 RUN make install
+RUN rm -rf wheels
